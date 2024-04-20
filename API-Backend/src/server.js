@@ -1,10 +1,10 @@
 // server.js
 require('dotenv').config();
-
 const Data_URI = process.env.Data_URI;
 
 const express = require('express');
 const mongoose = require('mongoose');
+const userRoute = require('./routes/user');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,6 +18,12 @@ mongoose.connect(Data_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     console.error('Error connecting to MongoDB', err);
   });
 
+  app.use(express.json());
+  app.use('/api/users', userRoute);
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+

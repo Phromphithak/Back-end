@@ -10,8 +10,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start-service": "node ./src/server.js"
+    "start-service": "nodemon ./src/server.js"
   },
   "author": "XIL-LIN",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
