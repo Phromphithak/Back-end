@@ -1,4 +1,7 @@
 // server.js
+require('dotenv').config();
+
+const Data_URI = process.env.Data_URI;
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -7,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // เชื่อมต่อกับ MongoDB
-mongoose.connect('mongodb+srv://intermc2546:cgQHXcTNYUqq3wY1@data-report.rbszuz1.mongodb.net/?retryWrites=true&w=majority&appName=Data-Report', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(Data_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })
