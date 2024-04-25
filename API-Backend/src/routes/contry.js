@@ -32,12 +32,15 @@ rounter.post('/', async(req,res)=>{
             town_municipality: province.town_municipality,
             district_municipality: province.district_municipality,
             local_administration_organization: province.local_administration_organization,
+            // sheet 6
             population_data: province.population_data.map(data => ({
                 age_group: data.age_group,
                 gender: data.gender,
                 population: data.population,
                 percentage: data.percentage
             }))
+            // sheet7
+            
         }))
     });
     

@@ -1,6 +1,17 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose
 
+// sheet7 ประเด็นด้านสุขภาพ
+const Hospital = new Schema({
+  hospital_comunity: Number,
+  hospital_general: Number,
+  hospital_center: Number,
+  hospital_Subdistricthealthpromotion: Number,
+  DistrictPublicHealthOffice: Number,
+  
+
+})
+
 // โมเดลข้อมูลประชากร
 const PopulationSchema = new Schema({
   age_group: String,
