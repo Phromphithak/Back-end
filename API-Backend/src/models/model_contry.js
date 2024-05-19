@@ -1,33 +1,47 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose
+const { Schema } = mongoose;
 
-// sheet8 บุคลากรทางแพทย์
-const Medical_person = new Schema({
-  doc_63 : Number,
-  dent_63 : Number,
-  phar_63 : Number,
-  nurse_63 : Number,
-  doc_64 : Number,
-  dent_64 : Number,
-  phar_64 : Number,
-  nurse_64 : Number,
-  doc_65 : Number,
-  dent_65 : Number,
-  phar_65 : Number,
-  nurse_65 : Number
-})
+// sheet 10 amount_volunteer
+const AmountVolunteerSchema = new Schema({
+  avt: Number,
+  population_mid_year: Number,
+  avt_per_people: Number  // Removed the calculation here
+});
 
-// sheet7 ประเด็นด้านสุขภาพ
-const Hospital_data = new Schema({
+// sheet 9 amount of bed Hospital
+const AobSchema = new Schema({
+  aob_63: Number,
+  aob_64: Number,
+  aob_65: Number,
+});
+
+// sheet 8 บุคลากรทางแพทย์
+const MedicalPersonSchema = new Schema({
+  doc_63: Number,
+  dent_63: Number,
+  phar_63: Number,
+  nurse_63: Number,
+  doc_64: Number,
+  dent_64: Number,
+  phar_64: Number,
+  nurse_64: Number,
+  doc_65: Number,
+  dent_65: Number,
+  phar_65: Number,
+  nurse_65: Number
+});
+
+// sheet 7 ประเด็นด้านสุขภาพ
+const HospitalDataSchema = new Schema({
   hospital_comunity: Number,
   hospital_general: Number,
   hospital_center: Number,
   hospital_Subdistricthealthpromotion: Number,
   DistrictPublicHealthOffice: Number,
-  data_md_per_year : [Medical_person]
-})
-
-
+  data_md_per_year: [MedicalPersonSchema],
+  data_bad_per_year: [AobSchema],
+  data_amount_volunteer: [AmountVolunteerSchema]
+});
 
 // โมเดลข้อมูลประชากร
 const PopulationSchema = new Schema({
@@ -52,25 +66,20 @@ const ProvinceSchema = new Schema({
   town_municipality: Number,
   district_municipality: Number,
   local_administration_organization: Number,
-  total: Number,
   population_data: [PopulationSchema], // เก็บข้อมูลประชากรตามช่วงอายุและเพศ
-  Hospital_data : [Hospital_data]
+  hospital_data: [HospitalDataSchema]
 });
 
-
 // โมเดลข้อมูลประเทศ
-const countrySchema = new Schema({
+const CountrySchema = new Schema({
   country: String,
   administrative_region: String,
   region: String,
   country_code: String,
   database_year: Number,
   provinces: [ProvinceSchema], // เก็บข้อมูลของแต่ละจังหวัดในประเทศ
-  total_population: Number // รวมจำนวนประชากรทั้งประเทศ
 });
 
+const Country = mongoose.model('Country', CountrySchema);
 
-
-const country = mongoose.model('country', countrySchema);
-
-module.exports = country;
+module.exports = Country;
