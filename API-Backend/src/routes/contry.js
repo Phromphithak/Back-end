@@ -11,6 +11,19 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/province/:province_name', async (req, res) => {
+  try {
+    const country_data = await Country.findOne({ "provinces.province_name": req.params.province_name });
+    if (!country_data) {
+      return res.status(404).json({ message: 'Province not found' });
+    }
+    const province = country_data.provinces.find(province => province.province_name === req.params.province_name);
+    res.json(province);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 router.post('/', async (req, res) => {
   const country_data = new Country({
     country: req.body.country,
