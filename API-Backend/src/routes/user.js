@@ -1,7 +1,7 @@
 // routes/user.js
 const express = require('express');
 const router = express.Router();
-const User = require('../models/model_User');
+const User = require('../models/model_user');
 
 // เพิ่มเส้นทางสำหรับดึงข้อมูลผู้ใช้ทั้งหมด
 router.get('/', async (req, res) => {
