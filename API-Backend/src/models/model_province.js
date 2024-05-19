@@ -1,7 +1,14 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-
+//sheet 14.1
+const PatientSchema = new Schema({
+  year: { type: Number  },
+  cumulativeCount: { type: Number  },
+  newCount: { type: Number  },
+  oldAndNewCount: { type: Number, },
+  ratePerHundredThousand: { type: Number }
+})
 
 const AmountVolunteerSchema = new Schema({
   avt: Number,
@@ -38,7 +45,8 @@ const HospitalDataSchema = new Schema({
   DistrictPublicHealthOffice: Number,
   data_md_per_year: [MedicalPersonSchema],
   data_bad_per_year: [AobSchema],
-  data_amount_volunteer: [AmountVolunteerSchema]
+  data_amount_volunteer: [AmountVolunteerSchema],
+  data_pantient : [PatientSchema]
 });
 
 const PopulationSchema = new Schema({

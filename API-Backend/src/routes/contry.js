@@ -80,6 +80,13 @@ router.post('/', async (req, res) => {
           avt: vol.avt,
           population_mid_year: vol.population_mid_year,
           avt_per_people: vol.avt_per_people
+        })),
+        data_pantient : data.data_pantient.map(pen => ({
+          year : pen.year,
+          cumulativeCount: pen.cumulativeCount,
+          newCount : pen.newCount,
+          ratePerHundredThousand : pen.ratePerHundredThousand,
+          oldAndNewCount : pen.oldAndNewCount
         }))
       }))
     }))
