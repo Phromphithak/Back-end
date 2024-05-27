@@ -20,3 +20,11 @@ const PerformanceSchema = new mongoose.Schema({
     other: Number, // อื่น ๆ
     totalPerformers: Number // ผู้แสดงความสามารถ รวม
 });
+
+const other = new Schema({
+  Office : [OfficeSchema],
+  Numberofchildprotectioncommunitycenters : [NumberofchildprotectioncommunitycentersSchema],
+  Performance : [PerformanceSchema]
+})
+
+module.exports = other;

@@ -70,6 +70,13 @@ const AobSchema = new Schema({
     aob: { type: Number, required: true }
 });
 
+const AmountVolunteerSchema = new Schema({
+    year: { type: Number, required: true },
+    avt: { type: Number, required: true },
+    population_mid_year: { type: Number, required: true },
+    avt_per_people: { type: Number, required: true }
+  });
+
 const HospitalDataSchema = new Schema({
     year: { type: Number, required: true },
     types: {
@@ -85,6 +92,8 @@ const HospitalDataSchema = new Schema({
     patient_data: [PatientSchema],
     SuicideAttempt: [SuicideAttemptSchema],
     SuicideSuccess: [SuicideSuccessSchema],
-    HealthData: [HealthDataSchema]
+    HealthData: [HealthDataSchema],
+    screening : [screeningSchema]
 });
 
+module.exports = HospitalDataSchema;

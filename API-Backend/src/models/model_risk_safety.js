@@ -43,7 +43,7 @@ const employmentSchema = new Schema({
     maleElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (ชาย)
     femaleElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (หญิง)
     elderlyToTotalEmploymentRatio: { type: Number, required: true }, // สัดส่วนแรงงานผู้สูงอายุต่อผู้มีงานทำทั้งหมด
-  });
+});
 //sheet 73
 const LaborForceSchema = new Schema({
     year: { type: Number, required: true },
@@ -105,9 +105,9 @@ const ChildAndYouthSchema = new Schema({
     year: { type: Number, required: true },
     behavior_type: { type: String, enum: ['behavior', 'substance_abuse', 'annoyance', 'gambling', 'sexual_behavior', 'other'], required: true }, // ประเภทของพฤติกรรม เช่น พฤติกรรมทางเพศ, ดื่มเครื่องดื่มที่มีแอลกอฮอล์, อื่น ๆ
     count: { type: Number, required: true }
-  });
+});
 
-  const CommunityWelfareFundSchema = new Schema({
+const CommunityWelfareFundSchema = new Schema({
     fundName: String,
     year: Number,
     amount: Number
@@ -178,3 +178,27 @@ const CaseSchema = new Schema({
     },
     total_trafficking_victims: Number
 });
+
+const riskandsafeModel = new Schema({
+    funeralAssistance: [funeralAssistanceSchema],
+    Labor: [LaborSchema],
+    ForeignWorker: [ForeignWorkerSchema],
+    HouseholdSaving: [HouseholdSavingSchema],
+    Unemployment: [UnemploymentSchema],
+    employment: [employmentSchema],
+    LaborForce: [LaborForceSchema],
+    ViolenceCause: [ViolenceCauseSchema],
+    DomesticViolence: [DomesticViolenceSchema],
+    InappropriateBehavior: [InappropriateBehaviorSchema],
+    SexualBehavior: [SexualBehaviorSchema],
+    OtherBehavior: [OtherBehaviorSchema],
+    ChildAndYouth: [ChildAndYouthSchema],
+    CommunityWelfareFund: [CommunityWelfareFundSchema],
+    RuralSufficiency: [RuralSufficiencySchema],
+    RoadAccident: [RoadAccidentSchema],
+    SecureHomeProject: [SecureHomeProjectSchema],
+    Case: [CaseSchema],
+
+})
+
+module.exports = riskandsafeModel;

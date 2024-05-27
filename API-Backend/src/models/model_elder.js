@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
-
 // sheet 86
 const EldersocialAssistanceSchema = new Schema({
     count : { type : Number }
@@ -59,3 +58,16 @@ const ElderlyPopulationSchema = new Schema({
     year: Number, // ปี
     recipientCount: Number, // จำนวนผู้รับเงินเบี้ยยังชีพผู้สูงอายุ
 });
+
+const elderdata = new Schema({
+  EldersocialAssistance : [EldersocialAssistanceSchema],
+  housingAdjustment : [housingAdjustmentSchema],
+  elderlyKnowledge : [elderlyKnowledgeSchema],
+  elderlyFuneralHome : [elderlyFuneralHomeSchema],
+  elderlySchool : [elderlySchoolSchema],
+  elderlyLoan : [elderlyLoanSchema],
+  ElderlyPopulation : [ElderlyPopulationSchema],
+  ElderlyAllowance : [ElderlyAllowanceSchema]
+})
+
+module.exports = elderdata;

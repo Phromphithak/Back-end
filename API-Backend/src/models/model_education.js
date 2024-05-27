@@ -85,6 +85,13 @@ const KindergartenSchema = new Schema({
     provincial_vocational_certificate_office: Number,
     total_vocational_certificate_office: Number
 });
+
+//sheet27
+const OfficeSchema = new Schema({
+    name: String,
+    total_offices: { type: Number, default: 0 }
+  });
+
 const EducationDepartmentSchema = new Schema({
     basic_education_committee_office: OfficeSchema,
     private_education_promotion_committee_office: OfficeSchema,
@@ -103,3 +110,12 @@ const AverageMonthlyIncomeSchema = new Schema({
         '64': { type: Number, required: true }
     }
 });
+
+const educationModel = new Schema({
+    Student : [StudentSchema],
+    Kindergarten : [KindergartenSchema],
+    EducationDepartment : [EducationDepartmentSchema],
+    AverageMonthlyIncome : [AverageMonthlyIncomeSchema]
+})
+
+module.exports = educationModel;

@@ -1,23 +1,6 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
-const ElderlyPopulationSchema = new Schema({
-    year: { type: Number, required: true },
-    age_groups: {
-        male_60_69: { type: Number, required: true },
-        female_60_69: { type: Number, required: true },
-        total_60_69: { type: Number, required: true },
-        male_70_79: { type: Number, required: true },
-        female_70_79: { type: Number, required: true },
-        total_70_79: { type: Number, required: true },
-        male_80_above: { type: Number, required: true },
-        female_80_above: { type: Number, required: true },
-        total_80_above: { type: Number, required: true },
-        total_60_above: { type: Number, required: true },
-    },
-    total_population: { type: Number, required: true },
-    elderly_population_ratio: { type: Number, required: true },
-});
 
 const PopulationSchema = new Schema({
     female_0_17: { type: Number, required: true },
@@ -89,4 +72,14 @@ const StreetChildrenSchema = new Schema({
     number_of_children: { type: Number, required: true }
 });
 
-
+const populationdata = new Schema({
+    Population : [PopulationSchema],
+    PopulationByAgeAndGender : [PopulationByAgeAndGenderSchema],
+    ChildDependencyRatio : [ChildDependencyRatioSchema],
+    Newborn : [NewbornSchema],
+    ChildWelfare : [ChildWelfareSchema],
+    OrphanageChild : [OrphanageChildSchema],
+    OrphanageFamily : [OrphanageFamilySchema],
+    ChildCare : [ChildCareSchema],
+    StreetChildren : [StreetChildrenSchema]
+})

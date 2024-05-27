@@ -12,7 +12,7 @@ const ChildSupportSchema = new Schema({
 const CommunityFamilyDevelopmentCenterSchema = new Schema({
     CFDAmount: Number,
     CFDRegisteredAmount: Number,
-    OPCDVAmount: number_of_families
+    OPCDVAmount: Number
 });
 
 const VolunteerSchema = new mongoose.Schema({
@@ -59,3 +59,12 @@ const VolunteerSchema = new mongoose.Schema({
         year66: Number // องค์กรสวัสดิการชุมชน ปี 66
     }
 });
+
+const supportModel = new Schema({
+    CommunityOrganisationCouncil : [CommunityOrganisationCouncilSchema],
+    ChildSupport : [ChildSupportSchema],
+    CommunityFamilyDevelopmentCenter : [CommunityFamilyDevelopmentCenterSchema],
+    Volunteer : [VolunteerSchema],
+})
+
+module.exports = supportModel;
