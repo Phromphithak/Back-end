@@ -1,5 +1,25 @@
 const mongoose = require('mongoose')
-const Schema = mongoose;
+const { Schema } = mongoose;
+
+const screeningSchema = new Schema({
+    year: {
+        type: Number,
+        required: true
+    },
+    category: {
+        type: String,
+        enum: ['social', 'home', 'bed'],
+        required: true
+    },
+    numberOfElderlyScreened: {
+        type: Number,
+        required: true
+    },
+    percentage: {
+        type: Number,
+        required: true
+    }
+});
 
 const HealthDataSchema = new Schema({
     year: { type: Number, required: true },

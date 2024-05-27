@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose;
+const { Schema } = mongoose;
 
 const ElderlyPopulationSchema = new Schema({
     year: { type: Number, required: true },

@@ -1,7 +1,249 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+//sheet 106 - 110
+const VolunteerSchema = new mongoose.Schema({
+  thai: Number, // คนไทย
+  foreigner: Number, // ต่างด้าว
+  total: Number, // คนขอทานรวม
+  humanDevelopment: {
+    year63: Number, // อาสาสมัครพัฒนาสังคมและความมั่นคงของมนุษย์ ปี 63
+    year64: Number, // อาสาสมัครพัฒนาสังคมและความมั่นคงของมนุษย์ ปี 64
+    year65: Number, // อาสาสมัครพัฒนาสังคมและความมั่นคงของมนุษย์ ปี 65
+    year66: Number, // อาสาสมัครพัฒนาสังคมและความมั่นคงของมนุษย์ ปี 66
+  },
+  corporateSocialResponsibility: {
+    csr: {
+      accumulate63_66: Number // เครือข่ายองค์กรภาครัฐและองค์กรภาคธุรกิจ Corporate Social Responsibility (CSR) สะสม ปี 63 - 66
+    }
+  },
+  privateDevelopment: {
+    foundation: Number, // องค์กรพัฒนาเอกชน มูลนิธิ
+    association: Number, // องค์กรพัฒนาเอกชน สมาคม
+    publicBenefitOrg: Number, // องค์กรพัฒนาเอกชน องค์กรสาธารณประโยชน์
+    publicWelfareOrg: Number, // องค์กรพัฒนาเอกชน องค์กรสถานสาธารณกุศล
+    clubGroup: Number, // องค์กรพัฒนาเอกชน กลุ่มชมรม ฯ
+    total: Number // องค์กรพัฒนาเอกชน รวม
+  },
+  publicDevelopment: {
+    communityOrg: Number, // องค์กรภาคประชาชน องค์กรชุมชน
+    communityAssembly: Number, // องค์กรภาคประชาชน สภาองค์กรชุมชน
+    communityWelfare: Number, // องค์กรภาคประชาชน องค์กรสวัสดิการชุมชน
+    communityDevelopment: Number, // องค์กรภาคประชาชน กลุ่มเพื่อการพัฒนาชุมชน
+    communityClub: Number, // องค์กรภาคประชาชน กลุ่มชมรม ฯ
+    total: Number // องค์กรภาคประชาชน รวม
+  },
+  publicBenefitOrg: {
+    year63: Number, // องค์กรสาธารณประโยชน์ ปี 63
+    year64: Number, // องค์กรสาธารณประโยชน์ ปี 64
+    year65: Number, // องค์กรสาธารณประโยชน์ ปี 65
+    year66: Number // องค์กรสาธารณประโยชน์ ปี 66
+  },
+  communityWelfareOrg: {
+    year63: Number, // องค์กรสวัสดิการชุมชน ปี 63
+    year64: Number, // องค์กรสวัสดิการชุมชน ปี 64
+    year65: Number, // องค์กรสวัสดิการชุมชน ปี 65
+    year66: Number // องค์กรสวัสดิการชุมชน ปี 66
+  }
+});
+// sheet 105
+const PerformanceSchema = new mongoose.Schema({
+  music: Number, // ด้านการแสดงดนตรี
+  dance: Number, // ด้านการแสดงนาฏศิลป์
+  drama: Number, // ด้านการแสดงละคร
+  art: Number, // ด้านการแสดงศิลปะ
+  danceDrama: Number, // ด้านการแสดงกายกรรม
+  other: Number, // อื่น ๆ
+  totalPerformers: Number // ผู้แสดงความสามารถ รวม
+});
 
+//sheet 90 - 102 and 104
+// Define schema
+const DisabledPopulationSchema = new Schema({
+  year: Number, // ปี
+  maleCount: Number, // จำนวนคนพิการเพศชาย
+  femaleCount: Number, // จำนวนคนพิการเพศหญิง
+  totalDisabledCount: Number, // จำนวนคนพิการรวม
+  disabledPercentage: Number, // สัดส่วนคนพิการต่อประชากร (ร้อยละ)
+  ageGroups: {
+    male: {
+      age0_6: Number,
+      age7_17: Number,
+      age18_25: Number,
+      age26_59: Number,
+      age60_plus: Number,
+      total: Number
+    },
+    female: {
+      age0_6: Number,
+      age7_17: Number,
+      age18_25: Number,
+      age26_59: Number,
+      age60_plus: Number,
+      total: Number
+    },
+    total: {
+      age0_6: Number,
+      age7_17: Number,
+      age18_25: Number,
+      age26_59: Number,
+      age60_plus: Number,
+      total: Number
+    }
+  },
+  disabilityTypes: {
+    visual: Number,
+    hearing: Number,
+    physical: Number,
+    mental: Number,
+    intellectual: Number,
+    learning: Number,
+    autistic: Number,
+    moreThanOne: Number,
+    unspecified: Number
+  },
+  education: {
+    inclusiveKindergarten: {
+      male: Number,
+      female: Number,
+      total: Number
+    },
+    inclusivePrimarySchool: {
+      male: Number,
+      female: Number,
+      total: Number
+    },
+    inclusiveSecondarySchool: {
+      male: Number,
+      female: Number,
+      total: Number
+    },
+    inclusiveIntegratedEducation: {
+      male: Number,
+      female: Number,
+      total: Number
+    }
+  },
+  specialEducation: {
+    specialSchool: Number,
+    welfareSchool: Number,
+    specialEducationCenter: Number,
+    total: Number
+  },
+  employment: {
+    largeEnterprises: Number,
+    employmentQuota: Number,
+    hireUnder33: Number,
+    sendFund34: Number,
+    provideAid35: Number,
+    hireUnder33AndAid35: Number,
+    sendFund34AndAid35: Number,
+    hireUnder33Fund34AndAid35: Number,
+    complyPartially: Number,
+    notComply: Number
+  },
+  serviceProviders: {
+    provincialDisabilityCenter: Number,
+    generalDisabilityCenter: Number,
+    disabilityOrganization: Number
+  },
+  assistanceServices: {
+    assistiveDevices: Number,
+    promoteQualityOfLifeFund: {
+      '63': Number,
+      '64': Number,
+      '65': Number,
+      '66': Number
+    },
+    personalAssistant: Number,
+    disabilityService: Number,
+    signLanguageInterpreter: Number, // บริการล่ามภาษามือ
+    personalAssistantForDisabled: Number, // บริการผู้ช่วยคนพิการ (PA)
+    disabilityAllowance63: Number, // จำนวนผู้รับเงินเบี้ยความพิการ (คน) ปี 63
+    disabilityAllowance64: Number, // จำนวนผู้รับเงินเบี้ยความพิการ (คน) ปี 64
+    disabilityAllowance65: Number, // จำนวนผู้รับเงินเบี้ยความพิการ (คน) ปี 65
+    disabilityAllowance66: Number, // จำนวนผู้รับเงินเบี้ยความพิการ (คน) ปี 66
+    // sheet 104
+    serviceUsers: {
+      year65: {
+        male: Number, // ผู้ใช้บริการของศูนย์คุ้มครองคนไร้ที่พึ่ง ชาย ปี 65
+        female: Number, // ผู้ใช้บริการของศูนย์คุ้มครองคนไร้ที่พึ่ง หญิง ปี 65
+        total: Number // ผู้ใช้บริการของศูนย์คุ้มครองคนไร้ที่พึ่ง รวม ปี 65
+      },
+      year66: {
+        male: Number, // ผู้ใช้บริการของศูนย์คุ้มครองคนไร้ที่พึ่ง ชาย ปี 66
+        female: Number, // ผู้ใช้บริการของศูนย์คุ้มครองคนไร้ที่พึ่ง หญิง ปี 66
+        total: Number // ผู้ใช้บริการของศูนย์คุ้มครองคนไร้ที่พึ่ง รวม ปี 66
+      }
+    }
+  }
+});
+
+// sheet 89
+const ElderlyAllowanceSchema = new Schema({
+  year: Number, // ปี
+  recipientCount: Number, // จำนวนผู้รับเงินเบี้ยยังชีพผู้สูงอายุ
+});
+
+//sheet 87
+// Schema สำหรับการปรับสภาพที่อยู่อาศัยผู้สูงอายุ
+const housingAdjustmentSchema = new Schema({
+  year: { type: Number, required: true }, // ปีที่เก็บข้อมูล
+  count: { type: Number, required: true }, // จำนวนครั้งที่มีการปรับสภาพที่อยู่อาศัยผู้สูงอายุ
+});
+
+// Schema สำหรับคลังปัญญาผู้สูงอายุ
+const elderlyKnowledgeSchema = new Schema({
+  count: { type: Number, required: true }, // จำนวนคนในคลังปัญญาผู้สูงอายุ
+});
+
+// Schema สำหรับศพอส.
+const elderlyFuneralHomeSchema = new Schema({
+  count: { type: Number, required: true }, // จำนวนศพที่มีการจัดการในศาสนสถานที่อสม.
+});
+
+// Schema สำหรับโรงเรียนผู้สูงอายุ
+const elderlySchoolSchema = new Schema({
+  count: { type: Number, required: true }, // จำนวนโรงเรียนผู้สูงอายุ
+});
+
+// sheet 86
+const EldersocialAssistanceSchema = new Schema({
+  count: { type: Number }
+})
+
+// sheet 85
+const funeralAssistanceSchema = new Schema({
+  year: { type: Number, required: true }, // ปีที่เก็บข้อมูล
+  count: { type: Number, required: true }, // จำนวนผู้สูงอายุที่ได้รับการสงเคราะห์ในการจัดการศพตามประเพณี
+});
+
+// sheet 83
+const elderlyLoanSchema = new Schema({
+  year: { type: Number, required: true }, // ปี
+  numberOfBorrowers: { type: Number, required: true }, // จำนวนผู้กู้ยืม
+});
+
+// sheet 80
+const screeningSchema = new Schema({
+  year: {
+    type: Number,
+    required: true
+  },
+  category: {
+    type: String,
+    enum: ['social', 'home', 'bed'],
+    required: true
+  },
+  numberOfElderlyScreened: {
+    type: Number,
+    required: true
+  },
+  percentage: {
+    type: Number,
+    required: true
+  }
+});
 
 // sheet 78-79
 const ElderlyPopulationSchema = new Schema({
@@ -24,34 +266,38 @@ const ElderlyPopulationSchema = new Schema({
 
 // sheet 77 
 const CommunityFamilyDevelopmentCenterSchema = new Schema({
-  CFDAmount : Number,
-  CFDRegisteredAmount : Number,
-  OPCDVAmount : number_of_families
+  CFDAmount: Number,
+  CFDRegisteredAmount: Number,
+  OPCDVAmount: number_of_families
 });
 // sheet 74
 const WomenDevelopmentFund = new Schema({
-  WDFOrganizations : { type:Number},
-  WDFPersonal : { type: Number}
+  WDFOrganizations: { type: Number },
+  WDFPersonal: { type: Number }
 });
 //sheet 73
-const LaborForceSchema = new mongoose.Schema({
+const LaborForceSchema = new Schema({
   year: { type: Number, required: true },
   gender: { type: String, enum: ['male', 'female'], required: true },
   employment_type: { type: String, enum: ['formal', 'informal'], required: true },
   total_workers: { type: Number, required: true },
 });
 //sheet 72
-const FemaleEmployeeTerminationSchema = new mongoose.Schema({
+const FemaleEmployeeTerminationSchema = new Schema({
   year: { type: Number, required: true },
   gender: { type: String, enum: ['male', 'female'], required: true },
   terminationCount: { type: Number, default: 0 },
 });
 
-//sheet 71
-const EmploymentSchema = new Schema({
-  total_female_employment: { type: Number, required: true },
-  female_unemployment: { type: Number, required: true },
-  female_unemployment_rate: { type: Number, required: true },
+//sheet 84
+const employmentSchema = new Schema({
+  totalEmployed: { type: Number, required: true }, // ผู้มีงานทำทั้งหมด (รวม)
+  maleEmployed: { type: Number, required: true }, // ผู้มีงานทำทั้งหมด (ชาย)
+  femaleEmployed: { type: Number, required: true }, // ผู้มีงานทำทั้งหมด (หญิง)
+  totalElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (รวม)
+  maleElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (ชาย)
+  femaleElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (หญิง)
+  elderlyToTotalEmploymentRatio: { type: Number, required: true }, // สัดส่วนแรงงานผู้สูงอายุต่อผู้มีงานทำทั้งหมด
 });
 
 //sheet 70
@@ -139,7 +385,7 @@ const PopulationSchema = new Schema({
 
 // sheet 64
 const NumberofchildprotectioncommunitycentersSchema = new Schema({
-  area : Number
+  area: Number
 })
 
 // sheet 62-63
@@ -467,7 +713,7 @@ const HouseholdSavingSchema = new Schema({
   year: Number,
   percentage: { type: Number, required: true }
 });
-
+// sheet 21 and 22
 const UnemploymentSchema = new Schema({
   total: { type: Number, required: true },
   male: { type: Number, required: true },
