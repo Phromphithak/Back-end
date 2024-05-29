@@ -49,13 +49,17 @@ const StudentSchema = new Schema({
         female: Number
     },
     average_years_of_education: {
-        '62': Number,
-        '63': Number,
-        '64': Number,
-        '65': Number
+        aye62 : Number,
+        aye63 : Number,
+        aye64 : Number,
+        aye65 : Number
     }
 });
-const KindergartenSchema = new Schema({
+const TypeofeducationalinstitutionSchema = new Schema({
+    state_kindergarten_schools : Number,
+    private_kindergarten_schools : Number,
+    public_kindergarten_schools : Number,
+    bangkok_pattaya_kindergarten_schools : Number,
     state_preparatory_schools: Number,
     private_preparatory_schools: Number,
     public_preparatory_schools: Number,
@@ -102,20 +106,11 @@ const EducationDepartmentSchema = new Schema({
     learning_promotion_department: OfficeSchema,
     total_schools_all: Number
 });
-const AverageMonthlyIncomeSchema = new Schema({
-    year: { type: Number, required: true },
-    income: {
-        '60': { type: Number, required: true },
-        '62': { type: Number, required: true },
-        '64': { type: Number, required: true }
-    }
-});
 
 const educationModel = new Schema({
     Student : [StudentSchema],
-    Kindergarten : [KindergartenSchema],
-    EducationDepartment : [EducationDepartmentSchema],
-    AverageMonthlyIncome : [AverageMonthlyIncomeSchema]
+    Kindergarten : [TypeofeducationalinstitutionSchema],
+    EducationDepartment : [EducationDepartmentSchema]
 })
 
 module.exports = educationModel;

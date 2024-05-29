@@ -78,6 +78,7 @@ const StreetChildrenSchema = new Schema({
     number_of_children: { type: Number, required: true }
 });
 
+
 const PopulationDataSchema = new Schema({
     Population: [PopulationSchema],
     PopulationByAgeAndGender: [PopulationByAgeAndGenderSchema],
@@ -87,7 +88,7 @@ const PopulationDataSchema = new Schema({
     OrphanageChild: [OrphanageChildSchema],
     OrphanageFamily: [OrphanageFamilySchema],
     ChildCare: [ChildCareSchema],
-    StreetChildren: [StreetChildrenSchema]
+    StreetChildren: [StreetChildrenSchema],
 });
 
 module.exports = PopulationDataSchema;

@@ -14,6 +14,14 @@ const GDPPerCapitaSchema = new Schema({
   },
   growth_63_64: { type: Number, required: true }
 });
+const AverageMonthlyIncomeSchema = new Schema({
+  year: { type: Number, required: true },
+  income: {
+      '60': { type: Number, required: true },
+      '62': { type: Number, required: true },
+      '64': { type: Number, required: true }
+  }
+});
 const DebtSchema = new Schema({
   year: { type: Number, required: true },
   total_debt: {
@@ -53,6 +61,7 @@ const ArticleSchema = new Schema({
 
 const econamymodel = new Schema({
   GDPPerCapita: [GDPPerCapitaSchema],
+  AverageMonthlyIncome: [AverageMonthlyIncomeSchema],
   Debt: [DebtSchema],
   InequalityCoefficient: [InequalityCoefficientSchema],
   AmountVolunteer: [AmountVolunteerSchema],

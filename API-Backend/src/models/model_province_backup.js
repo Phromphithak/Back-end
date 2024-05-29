@@ -617,11 +617,6 @@ const StudentSchema = new Schema({
     AIDS_affected: Number,
     multiple_categories: Number
   },
-  school_dropout: {
-    total: Number,
-    male: Number,
-    female: Number
-  },
   G1_2566: {
     total: Number,
     male: Number,
@@ -633,10 +628,10 @@ const StudentSchema = new Schema({
     female: Number
   },
   average_years_of_education: {
-    '62': Number,
-    '63': Number,
-    '64': Number,
-    '65': Number
+    aye62: Number,
+    aye63: Number,
+    aye64: Number,
+    aye65: Number
   }
 });
 
