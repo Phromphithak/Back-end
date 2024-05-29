@@ -6,7 +6,6 @@ const CountrySchema = new Schema({
   country: String,
   administrative_region: String,
   region: String,
-  country_code: String,
   database_year: Number,
   provinces: [ProvinceSchema.schema], // เก็บข้อมูลของแต่ละจังหวัดในประเทศ
 });

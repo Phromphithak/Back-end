@@ -11,6 +11,22 @@ const otherdata = require('./model_other');
 
 
 const ProvinceSchema = new Schema({
+  year: { type: Number, required: true },
+  province_code: { type: String, required: true },
+  province_name: { type: String, required: true },
+  administrative_region: { type: String, required: true },
+  base_year: { type: Number, required: true },
+  area: { type: Number, required: true },
+  population_2566: { type: Number, required: true },
+  population_density: { type: Number, required: true },
+  number_households: { type: Number, required: true },
+  municipality: {
+    province_municipality: { type: Number, required: true },
+    city_municipality: { type: Number, required: true },
+    town_municipality: { type: Number, required: true },
+    district_municipality: { type: Number, required: true },
+    local_administration_organization: { type: Number, required: true }
+  },
   Populationdata: [populationdata],
   Educationdata : [educationdata],
   Riskandsafedata : [riskandsafedata],

@@ -1,0 +1,173 @@
+{
+    "country": "ประเทศไทย",
+    "administrative_region": "สสว.08",
+    "region": "ภาคกลาง",
+    "database_year": 2566,
+    "provinces": [
+        {
+            "province_code" : "62",
+            "province_name": "กำแพงเพชร",
+            "administrative_region": "ภาคกลาง",
+            "base_year": 2566,
+            "area": 8607,
+            "population_2566":704948,
+            "number_households":154819,
+            "municipality" :{
+                "province_municipality" : 1,
+                "city_municipality" : 0,
+                "town_municipality" : 3,
+                "district_municipality" : 22,
+                "local_administration_organization" : 64
+            },
+            "Populationdata": [
+                {
+                    "Population": [
+                        {
+                            "year": 2023,
+                            "chiledren" : {
+                                "male": {
+                                    "babe" : 2197,
+                                    "age_0_6": 21008,
+                                    "age_7_17": 47228,
+                                    "age_18_25": 35453
+                                },
+                                "female": {
+                                    "babe" : 19482,
+                                    "age_0_6": 44020,
+                                    "age_7_17": 47228,
+                                    "age_18_25": 34099
+                                }
+                            },
+                            "male": {
+                                "age_0_17" : 68236,
+                                "age_18_25" : 35453,
+                                "age_26_59" : 176097,
+                                "age_60plus": 65780
+                            },
+                            "female": {
+                                "age_0_17" : 63502,
+                                "age_18_25" : 34099,
+                                "age_26_59" : 178100,
+                                "age_60plus": 80282
+                            }
+                        }
+                    ],
+                    "ChildDependencyRatio": [
+                        {
+                            "year": 2023,
+                            "ratio": 0.5
+                        }
+                    ],
+                    "Newborn": [
+                        {
+                            "year": 2564,
+                            "male": 2197,
+                            "female": 2060,
+                            "total": 4257,
+                            "rate": 6
+                        },{
+                            "year": 2565,
+                            "male": 1999,
+                            "female": 1835,
+                            "total": 3834,
+                            "rate": 5
+                        },{
+                            "year": 2566,
+                            "male": 2037,
+                            "female": 1957,
+                            "total": 3994,
+                            "rate": 6
+                        }
+                    ],
+                    "ChildWelfare": [
+                        {
+                            "year": 2563,
+                            "proportion_good_height_for_age": 57.46
+                        },{
+                            "year": 2564,
+                            "proportion_good_height_for_age": 58.18
+                        },{
+                            "year": 2565,
+                            "proportion_good_height_for_age": 52.09
+                        },{
+                            "year": 2566,
+                            "proportion_good_height_for_age": 52.58
+                        }
+                    ],
+                    "OrphanageChild": [
+                        {
+                            "number_of_children": 47
+                        }
+                    ],
+                    "OrphanageFamily": [
+                        {
+                            "number_of_families": 47
+                        }
+                    ],
+                    "ChildCare": [
+                        {
+                            "year": 2563,
+                            "pregnant_under_15": 21,
+                            "pregnant_under_20_repeat": 11,
+                            "children_born_to_mothers_15_19_per_thousand": 22,
+                            "children_born_to_mothers_10_14_per_thousand": 1,
+                            "single_registered_mother": 200,
+                            "single_registered_mother_privilege": 150,
+                            "single_registered_mother_compensation": 50,
+                            "single_registered_mother_young": 80,
+                            "single_registered_mother_young_privilege": 60,
+                            "single_registered_mother_young_compensation": 20
+                        },{
+                            "year": 2564,
+                            "pregnant_under_15": 31,
+                            "pregnant_under_20_repeat": 10,
+                            "children_born_to_mothers_15_19_per_thousand": 18,
+                            "children_born_to_mothers_10_14_per_thousand": 1,
+                            "single_registered_mother": 200,
+                            "single_registered_mother_privilege": 150,
+                            "single_registered_mother_compensation": 50,
+                            "single_registered_mother_young": 80,
+                            "single_registered_mother_young_privilege": 60,
+                            "single_registered_mother_young_compensation": 20
+                        },{
+                            "year": 2565,
+                            "pregnant_under_15": 6,
+                            "pregnant_under_20_repeat": 11,
+                            "children_born_to_mothers_15_19_per_thousand": 13,
+                            "children_born_to_mothers_10_14_per_thousand": 0,
+                            "single_registered_mother": 200,
+                            "single_registered_mother_privilege": 150,
+                            "single_registered_mother_compensation": 50,
+                            "single_registered_mother_young": 80,
+                            "single_registered_mother_young_privilege": 60,
+                            "single_registered_mother_young_compensation": 20
+                        },{
+                            "year": 2566,
+                            "pregnant_under_15": 25,
+                            "pregnant_under_20_repeat": 12,
+                            "children_born_to_mothers_15_19_per_thousand": 16,
+                            "children_born_to_mothers_10_14_per_thousand": 1,
+                            "single_registered_mother": 1780,
+                            "single_registered_mother_privilege": 1270,
+                            "single_registered_mother_compensation": 1268,
+                            "registered_mother_young" : 4660,
+                            "registered_mother_young_privilege" : 3384,
+                            "registered_mother_young_compensation" : 3359,
+                            "single_registered_mother_young": 320,
+                            "single_registered_mother_young_privilege": 279,
+                            "single_registered_mother_young_compensation": 278
+                        }
+                    ],
+                    "StreetChildren": [
+                        {
+                            "number_of_children": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            
+        }
+    ]
+}
