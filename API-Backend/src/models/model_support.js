@@ -60,10 +60,25 @@ const VolunteerSchema = new mongoose.Schema({
     }
 });
 
+const CommunityWelfareFundSchema = new Schema({
+    fundName: String,
+    year: Number,
+    amount: Number
+});
+
+const RuralSufficiencySchema = new Schema({
+    year: Number,
+    households: Number
+  });
+
+
+
 const supportModel = new Schema({
     CommunityOrganisationCouncil : [CommunityOrganisationCouncilSchema],
     ChildSupport : [ChildSupportSchema],
     CommunityFamilyDevelopmentCenter : [CommunityFamilyDevelopmentCenterSchema],
+    CommunityWelfareFund: [CommunityWelfareFundSchema],
+    RuralSufficiency: [RuralSufficiencySchema],
     Volunteer : [VolunteerSchema],
 })
 

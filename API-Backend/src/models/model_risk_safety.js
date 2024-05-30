@@ -62,16 +62,6 @@ const ChildAndYouthSchema = new Schema({
     count: { type: Number, required: true }
 });
 
-const CommunityWelfareFundSchema = new Schema({
-    fundName: String,
-    year: Number,
-    amount: Number
-});
-const RuralSufficiencySchema = new Schema({
-    year: Number,
-    households: Number
-});
-
 //sheet 38-41
 const RoadAccidentSchema = new Schema({
     year: Number,
@@ -142,8 +132,6 @@ const riskandsafeModel = new Schema({
     SexualBehavior: [SexualBehaviorSchema],
     OtherBehavior: [OtherBehaviorSchema],
     ChildAndYouth: [ChildAndYouthSchema],
-    CommunityWelfareFund: [CommunityWelfareFundSchema],
-    RuralSufficiency: [RuralSufficiencySchema],
     RoadAccident: [RoadAccidentSchema],
     SecureHomeProject: [SecureHomeProjectSchema],
     Case: [CaseSchema],

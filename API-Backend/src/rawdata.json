@@ -534,25 +534,12 @@
             {
               "year": 2023,
               "behavior_type": "behavior",
-              "count": 200
+              "count": 22
             },
             {
               "year": 2023,
               "behavior_type": "substance_abuse",
               "count": 150
-            }
-          ],
-          "CommunityWelfareFund": [
-            {
-              "fundName": "Community Fund A",
-              "year": 2023,
-              "amount": 100000
-            }
-          ],
-          "RuralSufficiency": [
-            {
-              "year": 2023,
-              "households": 5000
             }
           ],
           "RoadAccident": [
