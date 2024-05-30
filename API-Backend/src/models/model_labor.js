@@ -48,6 +48,13 @@ const employmentSchema = new Schema({
     elderlyToTotalEmploymentRatio: { type: Number, required: true }, // สัดส่วนแรงงานผู้สูงอายุต่อผู้มีงานทำทั้งหมด
 });
 
+const ArticleSchema = new Schema({
+    year: {type: Number, required: true},
+    article_33: { type: Number, required: true },
+    article_39: { type: Number, required: true },
+    article_40: { type: Number, required: true }
+  });
+
 const laborModel = new Schema({
     Labor : [LaborSchema],
     ForeignWorker : [ForeignWorkerSchema],
@@ -55,6 +62,8 @@ const laborModel = new Schema({
     Unemployment: [UnemploymentSchema],
     employment: [employmentSchema],
     LaborForce: [LaborForceSchema],
+    Article: [ArticleSchema]
+
 })
 
 module.exports = mongoose.model('laborModel',laborModel)

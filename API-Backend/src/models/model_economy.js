@@ -15,7 +15,6 @@ const GDPPerCapitaSchema = new Schema({
   growth_63_64: { type: Number, required: true }
 });
 const AverageMonthlyIncomeSchema = new Schema({
-  year: { type: Number, required: true },
   income: {
       '60': { type: Number, required: true },
       '62': { type: Number, required: true },
@@ -23,7 +22,6 @@ const AverageMonthlyIncomeSchema = new Schema({
   }
 });
 const DebtSchema = new Schema({
-  year: { type: Number, required: true },
   total_debt: {
     '60': { type: Number, required: true },
     '62': { type: Number, required: true },
@@ -39,7 +37,6 @@ const DebtSchema = new Schema({
   }
 });
 const InequalityCoefficientSchema = new Schema({
-  year: { type: Number, required: true },
   coefficient: {
     '62': { type: Number, required: true },
     '63': { type: Number, required: true },
@@ -47,25 +44,13 @@ const InequalityCoefficientSchema = new Schema({
     '65': { type: Number, required: true }
   }
 });
-const AmountVolunteerSchema = new Schema({
-  year: { type: Number, required: true },
-  avt: { type: Number, required: true },
-  population_mid_year: { type: Number, required: true },
-  avt_per_people: { type: Number, required: true }
-})
-const ArticleSchema = new Schema({
-  article_33: { type: Number, required: true },
-  article_39: { type: Number, required: true },
-  article_40: { type: Number, required: true }
-});
+
 
 const econamymodel = new Schema({
   GDPPerCapita: [GDPPerCapitaSchema],
   AverageMonthlyIncome: [AverageMonthlyIncomeSchema],
   Debt: [DebtSchema],
-  InequalityCoefficient: [InequalityCoefficientSchema],
-  AmountVolunteer: [AmountVolunteerSchema],
-  Article: [ArticleSchema]
+  InequalityCoefficient: [InequalityCoefficientSchema]
 })
 
 module.exports = econamymodel;

@@ -729,7 +729,6 @@ const UnemploymentSchema = new Schema({
 
 //sheet17-19
 const AverageMonthlyIncomeSchema = new Schema({
-  year: { type: Number, required: true },
   income: {
     '60': { type: Number, required: true },
     '62': { type: Number, required: true },
@@ -738,7 +737,6 @@ const AverageMonthlyIncomeSchema = new Schema({
 });
 
 const DebtSchema = new Schema({
-  year: { type: Number, required: true },
   total_debt: {
     '60': { type: Number, required: true },
     '62': { type: Number, required: true },
@@ -755,7 +753,6 @@ const DebtSchema = new Schema({
 });
 
 const InequalityCoefficientSchema = new Schema({
-  year: { type: Number, required: true },
   coefficient: {
     '62': { type: Number, required: true },
     '63': { type: Number, required: true },
