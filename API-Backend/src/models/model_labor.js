@@ -24,11 +24,37 @@ const HouseholdSavingSchema = new Schema({
     percentage: { type: Number, required: true }
 });
 
+// sheet 21 and 22
+const UnemploymentSchema = new Schema({
+    total: { type: Number, required: true },
+    male: { type: Number, required: true },
+    female: { type: Number, required: true },
+    unemployment_rate: {
+        '63': { type: Number, required: true },
+        '64': { type: Number, required: true },
+        '65': { type: Number, required: true },
+        '66': { type: Number, required: true }
+    }
+});
+
+//sheet 84
+const employmentSchema = new Schema({
+    totalEmployed: { type: Number, required: true }, // ผู้มีงานทำทั้งหมด (รวม)
+    maleEmployed: { type: Number, required: true }, // ผู้มีงานทำทั้งหมด (ชาย)
+    femaleEmployed: { type: Number, required: true }, // ผู้มีงานทำทั้งหมด (หญิง)
+    totalElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (รวม)
+    maleElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (ชาย)
+    femaleElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (หญิง)
+    elderlyToTotalEmploymentRatio: { type: Number, required: true }, // สัดส่วนแรงงานผู้สูงอายุต่อผู้มีงานทำทั้งหมด
+});
+
 const laborModel = new Schema({
     Labor : [LaborSchema],
-    LaborForce: [LaborForceSchema],
     ForeignWorker : [ForeignWorkerSchema],
-    HouseholdSaving : [HouseholdSavingSchema]
+    HouseholdSaving : [HouseholdSavingSchema],
+    Unemployment: [UnemploymentSchema],
+    employment: [employmentSchema],
+    LaborForce: [LaborForceSchema],
 })
 
 module.exports = mongoose.model('laborModel',laborModel)

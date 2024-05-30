@@ -173,6 +173,164 @@
             ]
           }
         ],
+        "Labor": [
+          {
+            "year": 2563,
+            "in_system": 105747,
+            "out_system": 310797
+          },
+          {
+            "year": 2564,
+            "in_system": 106198,
+            "out_system": 295244
+          }
+        ],
+        "ForeignWorker": [
+          {
+            "year": 2563,
+            "total": 6160
+          },
+          {
+            "year": 2564,
+            "total": 6021
+          },
+          {
+            "year": 2565,
+            "total": 7517
+          },
+          {
+            "year": 2566,
+            "total": 5862
+          }
+        ],
+        "HouseholdSaving": [
+          {
+            "year": 2566,
+            "percentage": 100
+          }
+        ],
+        "Unemployment": [
+          {
+            "total": 9970,
+            "male": 5168,
+            "female": 4802,
+            "unemployment_rate": {
+              "63": 1.84728225341652,
+              "64": 3.19234200535078,
+              "65": 2.24248151356476,
+              "66": 2.21722554714607
+            }
+          }
+        ],
+        "employment": [
+          {
+            "totalEmployed": 449666,
+            "maleEmployed": 238562,
+            "femaleEmployed": 211104,
+            "totalElderlyEmployed": 201207,
+            "maleElderlyEmployed": 85642,
+            "femaleElderlyEmployed": 115565,
+            "elderlyToTotalEmploymentRatio": 46.3011355614905
+          }
+        ],
+        "LaborForce": [
+          {
+            "year": 2566,
+            "gender": "female",
+            "employment_type": "formal",
+            "total_workers": 46443
+          },
+          {
+              "year": 2566,
+              "gender": "male",
+              "employment_type": "formal",
+              "total_workers": 54682
+          },
+          {
+            "year": 2566,
+            "gender": "female",
+            "employment_type": "informal",
+            "total_workers": 161882
+          },
+          {
+              "year": 2566,
+              "gender": "male",
+              "employment_type": "informal",
+              "total_workers": 171565
+          },
+          {
+            "year": 2565,
+            "gender": "female",
+            "employment_type": "formal",
+            "total_workers": 41823
+          },
+          {
+              "year": 2565,
+              "gender": "male",
+              "employment_type": "formal",
+              "total_workers": 54242
+          },
+          {
+            "year": 2565,
+            "gender": "female",
+            "employment_type": "informal",
+            "total_workers": 140660
+          },
+          {
+              "year": 2565,
+              "gender": "male",
+              "employment_type": "informal",
+              "total_workers": 181097
+          },
+          {
+            "year": 2564,
+            "gender": "female",
+            "employment_type": "formal",
+            "total_workers": 44714
+          },
+          {
+              "year": 2564,
+              "gender": "male",
+              "employment_type": "formal",
+              "total_workers": 61483
+          },
+          {
+            "year": 2564,
+            "gender": "female",
+            "employment_type": "informal",
+            "total_workers": 138845
+          },
+          {
+              "year": 2564,
+              "gender": "male",
+              "employment_type": "informal",
+              "total_workers": 156399
+          },
+          {
+            "year": 2563,
+            "gender": "female",
+            "employment_type": "formal",
+            "total_workers": 47369
+          },
+          {
+              "year": 2563,
+              "gender": "male",
+              "employment_type": "formal",
+              "total_workers": 58377
+          },
+          {
+            "year": 2563,
+            "gender": "female",
+            "employment_type": "informal",
+            "total_workers": 142077
+          },
+          {
+              "year": 2563,
+              "gender": "male",
+              "employment_type": "informal",
+              "total_workers": 169720
+          }
+        ],
         "Student": [
           {
             "year": 2566,
@@ -312,82 +470,6 @@
             {
                 "year": 2566,
                 "count": 2584
-            }
-          ],
-          "Labor": [
-            {
-              "year": 2023,
-              "in_system": 50000,
-              "out_system": 15000
-            },
-            {
-              "year": 2022,
-              "in_system": 48000,
-              "out_system": 14000
-            }
-          ],
-          "ForeignWorker": [
-            {
-              "year": 2023,
-              "total": 12000
-            },
-            {
-              "year": 2022,
-              "total": 11000
-            }
-          ],
-          "HouseholdSaving": [
-            {
-              "year": 2023,
-              "percentage": 25.5
-            },
-            {
-              "year": 2022,
-              "percentage": 24.8
-            }
-          ],
-          "Unemployment": [
-            {
-              "total": 5000,
-              "male": 3000,
-              "female": 2000,
-              "unemployment_rate": {
-                "63": 2.5,
-                "64": 2.6,
-                "65": 2.7,
-                "66": 2.8
-              }
-            }
-          ],
-          "employment": [
-            {
-              "totalEmployed": 449666,
-              "maleEmployed": 238562,
-              "femaleEmployed": 211104,
-              "totalElderlyEmployed": 201207,
-              "maleElderlyEmployed": 85642,
-              "femaleElderlyEmployed": 115565,
-              "elderlyToTotalEmploymentRatio": 46.3011355614905
-            }
-          ],
-          "LaborForce": [
-            {
-              "year": 2565,
-              "gender": "male",
-              "employment_type": "formal",
-              "total_workers": 30000
-            },
-            {
-                "year": 2565,
-                "gender": "male",
-                "employment_type": "formal",
-                "total_workers": 30000
-              },
-            {
-              "year": 2023,
-              "gender": "female",
-              "employment_type": "informal",
-              "total_workers": 20000
             }
           ],
           "ViolenceCause": [
