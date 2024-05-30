@@ -7,20 +7,7 @@ const funeralAssistanceSchema = new Schema({
     count: { type: Number, required: true }, // จำนวนผู้สูงอายุที่ได้รับการสงเคราะห์ในการจัดการศพตามประเพณี
 });
 
-// sheet 24-25
-const LaborSchema = new Schema({
-    year: Number,
-    in_system: { type: Number, required: true },
-    out_system: { type: Number, required: true }
-});
-const ForeignWorkerSchema = new Schema({
-    year: Number,
-    total: { type: Number, required: true }
-});
-const HouseholdSavingSchema = new Schema({
-    year: Number,
-    percentage: { type: Number, required: true }
-});
+
 
 // sheet 21 and 22
 const UnemploymentSchema = new Schema({
@@ -44,13 +31,7 @@ const employmentSchema = new Schema({
     femaleElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (หญิง)
     elderlyToTotalEmploymentRatio: { type: Number, required: true }, // สัดส่วนแรงงานผู้สูงอายุต่อผู้มีงานทำทั้งหมด
 });
-//sheet 73
-const LaborForceSchema = new Schema({
-    year: { type: Number, required: true },
-    gender: { type: String, enum: ['male', 'female'], required: true },
-    employment_type: { type: String, enum: ['formal', 'informal'], required: true },
-    total_workers: { type: Number, required: true },
-});
+
 //sheet 70
 const ViolenceCauseSchema = new Schema({
     drug_abuse: { type: Number, required: true },

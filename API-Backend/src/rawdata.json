@@ -392,33 +392,33 @@
           ],
           "ViolenceCause": [
             {
-              "drug_abuse": 120,
-              "alcohol_abuse": 100,
-              "gambling": 80,
-              "divorce": 50,
-              "jealousy": 40,
-              "revenge": 30,
-              "economic_stress": 200,
-              "physical_health_issues": 150,
-              "mental_health_issues": 100,
-              "feeling_of_empowerment": 70,
-              "alcohol_and_drug_abuse": 60,
-              "jealousy_and_revenge": 40,
-              "jealousy_and_divorce": 30,
-              "alcohol_and_revenge": 20,
-              "drug_and_revenge": 10
+              "drug_abuse": 5,
+              "alcohol_abuse": 2,
+              "gambling": 1,
+              "divorce": 1,
+              "jealousy": 4,
+              "revenge": 1,
+              "economic_stress": 0,
+              "physical_health_issues": 1,
+              "mental_health_issues": 4,
+              "feeling_of_empowerment": 1,
+              "alcohol_and_drug_abuse": 2,
+              "jealousy_and_revenge": 1,
+              "jealousy_and_divorce": 3,
+              "alcohol_and_revenge": 1,
+              "drug_and_revenge": 0
             }
           ],
           "DomesticViolence": [
             {
-              "male_victims": 300,
-              "female_victims": 400,
-              "total_victims": 700,
+              "male_victims": 2,
+              "female_victims": 25,
+              "total_victims": 27,
               "aspects": {
-                "physical": 400,
-                "sexual": 100,
-                "emotional": 150,
-                "fatalities": 50
+                "physical": 11,
+                "sexual": 5,
+                "emotional": 11,
+                "fatalities": 0
               }
             }
           ],

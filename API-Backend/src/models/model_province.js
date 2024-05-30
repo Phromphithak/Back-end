@@ -8,6 +8,7 @@ const populationdata = require('./model_population_and_family');
 const riskandsafedata = require('./model_risk_safety');
 const supportdata = require('./model_support');
 const otherdata = require('./model_other');
+const labordata = require('./model_labor');
 
 
 const ProvinceSchema = new Schema({
@@ -28,6 +29,7 @@ const ProvinceSchema = new Schema({
     local_administration_organization: { type: Number, required: true }
   },
   Populationdata: [populationdata],
+  labordata : [labordata],
   Educationdata : [educationdata],
   Riskandsafedata : [riskandsafedata],
   Econamydata : [econamydata],
