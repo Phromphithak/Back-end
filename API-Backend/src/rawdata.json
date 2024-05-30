@@ -544,65 +544,77 @@
           ],
           "RoadAccident": [
             {
-              "year": 2023,
-              "injuries": 1000,
-              "fatalities": 200,
-              "disabilities": 50
-            }
-          ],
-          "SecureHomeProject": [
+              "year": 2563,
+              "injuries": 7669,
+              "disabilities": 0,
+              "fatalities": 123
+            },
             {
-              "year": 2023,
-              "supportedHouseholds": 300
+              "year": 2564,
+              "injuries": 6800,
+              "disabilities": 0,
+              "fatalities": 109
+            },
+            {
+              "year": 2565,
+              "injuries": 7036,
+              "disabilities": 1,
+              "fatalities": 149
+            },
+            {
+              "year": 2563,
+              "injuries": 4768,
+              "disabilities": 4,
+              "fatalities": 135
             }
           ],
           "Case": [
             {
               "year": 2023,
               "life": {
-                "male": 20,
-                "female": 15,
-                "unspecified": 5,
-                "total": 40
+                "male": 173,
+                "female": 91,
+                "unspecified": 44,
+                "total": 308
               },
               "property": {
-                "male": 100,
-                "female": 80,
-                "unspecified": 20,
-                "total": 200
+                "male": 327,
+                "female": 215,
+                "unspecified": 104,
+                "total": 646
               },
-              "population_mid_66": 100000,
-              "life_per_100k": 0.04,
-              "property_per_100k": 0.2,
-              "life_ranking": 10,
-              "property_ranking": 5,
+              "population_mid_66": 705257,
+              "life_per_100k": 43.6720231064704,
+              "property_per_100k": 91.5978146973373,
+              "life_ranking": 29,
+              "property_ranking": 61,
               "drug_crime": {
                 "cases": {
-                  "male": 50,
-                  "female": 30,
-                  "unspecified": 10,
-                  "total": 90
+                  "male": 4205,
+                  "female": 165,
+                  "unspecified": 165,
+                  "total": 5208
                 },
                 "arrests": {
-                  "male": 40,
-                  "female": 25,
-                  "unspecified": 5,
-                  "total": 70
+                  "male": 4467,
+                  "female": 199,
+                  "unspecified": 888,
+                  "total": 5553
                 },
-                "cases_per_100k_population_mid_66": 0.09,
-                "arrests_ranking": 8
+                "cases_per_100k_population_mid_66": 738.454208891227,
+                "arrests_ranking": 69
               },
               "child_trafficking_victims": {
-                "male": 10,
-                "female": 15,
-                "total": 25
+                "male": 0,
+                "female": 0,
+                "total": 0
               },
               "adult_trafficking_victims": {
-                "male": 5,
-                "female": 10,
-                "total": 15
+                "male": 0,
+                "female": 0,
+                "total": 0
               },
-              "total_trafficking_victims": 40
+              "total_trafficking_victims": 0
             }
           ]
       }

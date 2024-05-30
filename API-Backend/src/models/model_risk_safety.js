@@ -66,13 +66,9 @@ const ChildAndYouthSchema = new Schema({
 const RoadAccidentSchema = new Schema({
     year: Number,
     injuries: Number,
-    fatalities: Number,
-    disabilities: Number
-});
-
-const SecureHomeProjectSchema = new Schema({
-    year: Number,
-    supportedHouseholds: Number
+    disabilities: Number,
+    fatalities: Number
+    
 });
 
 //sheet 36.1-37
@@ -133,9 +129,7 @@ const riskandsafeModel = new Schema({
     OtherBehavior: [OtherBehaviorSchema],
     ChildAndYouth: [ChildAndYouthSchema],
     RoadAccident: [RoadAccidentSchema],
-    SecureHomeProject: [SecureHomeProjectSchema],
     Case: [CaseSchema],
-
 })
 
 module.exports = riskandsafeModel;

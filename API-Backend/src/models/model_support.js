@@ -71,6 +71,10 @@ const RuralSufficiencySchema = new Schema({
     households: Number
   });
 
+const SecureHomeProjectSchema = new Schema({
+    year: Number,
+    supportedHouseholds: Number
+});
 
 
 const supportModel = new Schema({
@@ -79,6 +83,7 @@ const supportModel = new Schema({
     CommunityFamilyDevelopmentCenter : [CommunityFamilyDevelopmentCenterSchema],
     CommunityWelfareFund: [CommunityWelfareFundSchema],
     RuralSufficiency: [RuralSufficiencySchema],
+    SecureHomeProject: [SecureHomeProjectSchema],
     Volunteer : [VolunteerSchema],
 })
 
