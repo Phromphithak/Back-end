@@ -34,8 +34,41 @@ router.post('/', async (req, res) => {
   try {
     const country = new Country(req.body);
     await country.save();
-    console.log('Country data inserted successfully!');
-    res.status(201).json({ message: 'Country data inserted successfully!' });
+    console.log('Country data inserted successfully!', country);
+    res.status(201).json({ message: 'Country data inserted successfully!', country });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+// PUT update specific province data by province name
+router.put('/province/:province_name', async (req, res) => {
+  try {
+    const { province_name } = req.params;
+    const updateData = req.body;
+
+    const country_data = await Country.findOneAndUpdate(
+      { "provinces.province_name": province_name },
+      {
+        $set: {
+          "provinces.$[elem]": updateData
+        }
+      },
+      {
+        arrayFilters: [{ "elem.province_name": province_name }],
+        new: true,
+        runValidators: true
+      }
+    );
+
+    if (!country_data) {
+      return res.status(404).json({ message: 'Province not found' });
+    }
+
+    res.json({
+      message: 'Province updated successfully!',
+      province: country_data.provinces.find(province => province.province_name === province_name)
+    });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

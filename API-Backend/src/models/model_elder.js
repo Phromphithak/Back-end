@@ -1,6 +1,26 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
+const screeningSchema = new Schema({
+  year: {
+      type: Number,
+      required: true
+  },
+  category: {
+      type: String,
+      enum: ['social', 'home', 'bed'],
+      required: true
+  },
+  numberOfElderlyScreened: {
+      type: Number,
+      required: true
+  },
+  percentage: {
+      type: Number,
+      required: true
+  }
+});
+
 // sheet 86
 const EldersocialAssistanceSchema = new Schema({
     count : { type : Number }
@@ -9,48 +29,48 @@ const EldersocialAssistanceSchema = new Schema({
 //sheet 87
 // Schema สำหรับการปรับสภาพที่อยู่อาศัยผู้สูงอายุ
 const housingAdjustmentSchema = new Schema({
-    year: { type: Number, required: true }, // ปีที่เก็บข้อมูล
-    count: { type: Number, required: true }, // จำนวนครั้งที่มีการปรับสภาพที่อยู่อาศัยผู้สูงอายุ
+    year: { type: Number }, // ปีที่เก็บข้อมูล
+    count: { type: Number }, // จำนวนครั้งที่มีการปรับสภาพที่อยู่อาศัยผู้สูงอายุ
 });
 
 // Schema สำหรับคลังปัญญาผู้สูงอายุ
 const elderlyKnowledgeSchema = new Schema({
-    count: { type: Number, required: true }, // จำนวนคนในคลังปัญญาผู้สูงอายุ
+    count: { type: Number }, // จำนวนคนในคลังปัญญาผู้สูงอายุ
 });
 
 // Schema สำหรับศพอส.
 const elderlyFuneralHomeSchema = new Schema({
-    count: { type: Number, required: true }, // จำนวนศพที่มีการจัดการในศาสนสถานที่อสม.
+    count: { type: Number }, // จำนวนศพที่มีการจัดการในศาสนสถานที่อสม.
 });
 
 // Schema สำหรับโรงเรียนผู้สูงอายุ
 const elderlySchoolSchema = new Schema({
-    count: { type: Number, required: true }, // จำนวนโรงเรียนผู้สูงอายุ
+    count: { type: Number }, // จำนวนโรงเรียนผู้สูงอายุ
 });
 
 // sheet 83
 const elderlyLoanSchema = new Schema({
-    year: { type: Number, required: true }, // ปี
-    numberOfBorrowers: { type: Number, required: true }, // จำนวนผู้กู้ยืม
+    year: { type: Number }, // ปี
+    numberOfBorrowers: { type: Number }, // จำนวนผู้กู้ยืม
   });
 
 // sheet 78-79
 const ElderlyPopulationSchema = new Schema({
-    year: { type: Number, required: true },
+    year: { type: Number },
     age_groups: {
-      male_60_69: { type: Number, required: true },
-      female_60_69: { type: Number, required: true },
-      total_60_69: { type: Number, required: true },
-      male_70_79: { type: Number, required: true },
-      female_70_79: { type: Number, required: true },
-      total_70_79: { type: Number, required: true },
-      male_80_above: { type: Number, required: true },
-      female_80_above: { type: Number, required: true },
-      total_80_above: { type: Number, required: true },
-      total_60_above: { type: Number, required: true },
+      male_60_69: { type: Number },
+      female_60_69: { type: Number },
+      total_60_69: { type: Number },
+      male_70_79: { type: Number },
+      female_70_79: { type: Number },
+      total_70_79: { type: Number },
+      male_80_above: { type: Number },
+      female_80_above: { type: Number },
+      total_80_above: { type: Number },
+      total_60_above: { type: Number },
     },
-    total_population: { type: Number, required: true },
-    elderly_population_ratio: { type: Number, required: true },
+    total_population: { type: Number },
+    elderly_population_ratio: { type: Number },
   });
   
 // sheet 89
@@ -59,7 +79,7 @@ const ElderlyPopulationSchema = new Schema({
     recipientCount: Number, // จำนวนผู้รับเงินเบี้ยยังชีพผู้สูงอายุ
 });
 
-const elderdata = new Schema({
+const elderdataSchema = new Schema({
   EldersocialAssistance : [EldersocialAssistanceSchema],
   housingAdjustment : [housingAdjustmentSchema],
   elderlyKnowledge : [elderlyKnowledgeSchema],
@@ -67,7 +87,9 @@ const elderdata = new Schema({
   elderlySchool : [elderlySchoolSchema],
   elderlyLoan : [elderlyLoanSchema],
   ElderlyPopulation : [ElderlyPopulationSchema],
-  ElderlyAllowance : [ElderlyAllowanceSchema]
+  ElderlyAllowance : [ElderlyAllowanceSchema],
+  screening : [screeningSchema]
+
 })
 
-module.exports = elderdata;
+module.exports = {schema: elderdataSchema};

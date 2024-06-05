@@ -3,63 +3,63 @@ const { Schema } = mongoose;
 
 //sheet 85
 const funeralAssistanceSchema = new Schema({
-    year: { type: Number, required: true }, // ปีที่เก็บข้อมูล
-    count: { type: Number, required: true }, // จำนวนผู้สูงอายุที่ได้รับการสงเคราะห์ในการจัดการศพตามประเพณี
+    year: { type: Number }, // ปีที่เก็บข้อมูล
+    count: { type: Number }, // จำนวนผู้สูงอายุที่ได้รับการสงเคราะห์ในการจัดการศพตามประเพณี
 });
 //sheet 70
 const ViolenceCauseSchema = new Schema({
-    drug_abuse: { type: Number, required: true },
-    alcohol_abuse: { type: Number, required: true },
-    gambling: { type: Number, required: true },
-    divorce: { type: Number, required: true },
-    jealousy: { type: Number, required: true },
-    revenge: { type: Number, required: true },
-    economic_stress: { type: Number, required: true },
-    physical_health_issues: { type: Number, required: true },
-    mental_health_issues: { type: Number, required: true },
-    feeling_of_empowerment: { type: Number, required: true },
-    alcohol_and_drug_abuse: { type: Number, required: true },
-    jealousy_and_revenge: { type: Number, required: true },
-    jealousy_and_divorce: { type: Number, required: true },
-    alcohol_and_revenge: { type: Number, required: true },
-    drug_and_revenge: { type: Number, required: true },
+    drug_abuse: { type: Number },
+    alcohol_abuse: { type: Number },
+    gambling: { type: Number },
+    divorce: { type: Number },
+    jealousy: { type: Number },
+    revenge: { type: Number },
+    economic_stress: { type: Number },
+    physical_health_issues: { type: Number },
+    mental_health_issues: { type: Number },
+    feeling_of_empowerment: { type: Number },
+    alcohol_and_drug_abuse: { type: Number },
+    jealousy_and_revenge: { type: Number },
+    jealousy_and_divorce: { type: Number },
+    alcohol_and_revenge: { type: Number },
+    drug_and_revenge: { type: Number },
 });
 // sheet 69.1
 const DomesticViolenceSchema = new Schema({
-    male_victims: { type: Number, required: true },
-    female_victims: { type: Number, required: true },
-    total_victims: { type: Number, required: true },
+    male_victims: { type: Number },
+    female_victims: { type: Number },
+    total_victims: { type: Number },
     aspects: {
-        physical: { type: Number, required: true },
-        sexual: { type: Number, required: true },
-        emotional: { type: Number, required: true },
-        fatalities: { type: Number, required: true },
+        physical: { type: Number },
+        sexual: { type: Number },
+        emotional: { type: Number },
+        fatalities: { type: Number },
     },
 });
 
 //sheet 58-60
 const InappropriateBehaviorSchema = new Schema({
-    year: { type: Number, required: true },
-    behavior_type: { type: String, required: true }, // ประเภทของพฤติกรรมไม่เหมาะสม เช่น ดื่มเครื่องดื่มที่มีแอลกอฮอล์, มั่วสุม, ติดเกมส์ เป็นต้น
-    count: { type: Number, required: true }
+    year: { type: Number },
+    behavior_type: { type: String }, // ประเภทของพฤติกรรมไม่เหมาะสม เช่น ดื่มเครื่องดื่มที่มีแอลกอฮอล์, มั่วสุม, ติดเกมส์ เป็นต้น
+    count: { type: Number }
 });
 const SexualBehaviorSchema = new Schema({
-    year: { type: Number, required: true },
-    behavior_type: { type: String, required: true }, // ประเภทของพฤติกรรมทางเพศ เช่น มีพฤติกรรมทางเพศ, อื่น ๆ
-    count: { type: Number, required: true }
+    year: { type: Number },
+    behavior_type: { type: String }, // ประเภทของพฤติกรรมทางเพศ เช่น มีพฤติกรรมทางเพศ, อื่น ๆ
+    count: { type: Number }
 });
 
 const OtherBehaviorSchema = new Schema({
-    year: { type: Number, required: true },
-    behavior_type: { type: String, required: true }, // ประเภทของพฤติกรรมอื่น ๆ เช่น ทำความรำคาญ, อื่น ๆ
-    count: { type: Number, required: true }
+    year: { type: Number },
+    behavior_type: { type: String }, // ประเภทของพฤติกรรมอื่น ๆ เช่น ทำความรำคาญ, อื่น ๆ
+    count: { type: Number }
 });
 
 
 const ChildAndYouthSchema = new Schema({
-    year: { type: Number, required: true },
-    behavior_type: { type: String, enum: ['behavior', 'substance_abuse', 'annoyance', 'gambling', 'sexual_behavior', 'other'], required: true }, // ประเภทของพฤติกรรม เช่น พฤติกรรมทางเพศ, ดื่มเครื่องดื่มที่มีแอลกอฮอล์, อื่น ๆ
-    count: { type: Number, required: true }
+    year: { type: Number },
+    behavior_type: { type: String, enum: ['behavior', 'substance_abuse', 'annoyance', 'gambling', 'sexual_behavior', 'other'] }, // ประเภทของพฤติกรรม เช่น พฤติกรรมทางเพศ, ดื่มเครื่องดื่มที่มีแอลกอฮอล์, อื่น ๆ
+    count: { type: Number }
 });
 
 //sheet 38-41
@@ -120,7 +120,7 @@ const CaseSchema = new Schema({
     total_trafficking_victims: Number
 });
 
-const riskandsafeModel = new Schema({
+const riskandsafeDataSchema = new Schema({
     funeralAssistance: [funeralAssistanceSchema],
     ViolenceCause: [ViolenceCauseSchema],
     DomesticViolence: [DomesticViolenceSchema],
@@ -132,4 +132,5 @@ const riskandsafeModel = new Schema({
     Case: [CaseSchema],
 })
 
-module.exports = riskandsafeModel;
+
+module.exports = { schema: riskandsafeDataSchema };

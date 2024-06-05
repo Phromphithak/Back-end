@@ -112,4 +112,4 @@ const DisabledPopulationSchema = new Schema({
 // Create model
 const DisabledPopulationModel = mongoose.model('DisabledPopulation', DisabledPopulationSchema);
 
-module.exports = DisabledPopulationModel;
+module.exports = { schema: DisabledPopulationModel };

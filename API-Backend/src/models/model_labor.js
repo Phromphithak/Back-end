@@ -3,59 +3,59 @@ const { Schema } = mongoose;
 
 //sheet 73
 const LaborForceSchema = new Schema({
-    year: { type: Number, required: true },
-    gender: { type: String, enum: ['male', 'female'], required: true },
-    employment_type: { type: String, enum: ['formal', 'informal'], required: true },
-    total_workers: { type: Number, required: true },
+    year: { type: Number },
+    gender: { type: String, enum: ['male', 'female'] },
+    employment_type: { type: String, enum: ['formal', 'informal'] },
+    total_workers: { type: Number },
 });
 
 // sheet 24-25
 const LaborSchema = new Schema({
     year: Number,
-    in_system: { type: Number, required: true },
-    out_system: { type: Number, required: true }
+    in_system: { type: Number },
+    out_system: { type: Number }
 });
 const ForeignWorkerSchema = new Schema({
     year: Number,
-    total: { type: Number, required: true }
+    total: { type: Number }
 });
 const HouseholdSavingSchema = new Schema({
     year: Number,
-    percentage: { type: Number, required: true }
+    percentage: { type: Number }
 });
 
 // sheet 21 and 22
 const UnemploymentSchema = new Schema({
-    total: { type: Number, required: true },
-    male: { type: Number, required: true },
-    female: { type: Number, required: true },
+    total: { type: Number },
+    male: { type: Number },
+    female: { type: Number },
     unemployment_rate: {
-        '63': { type: Number, required: true },
-        '64': { type: Number, required: true },
-        '65': { type: Number, required: true },
-        '66': { type: Number, required: true }
+        '63': { type: Number },
+        '64': { type: Number },
+        '65': { type: Number },
+        '66': { type: Number }
     }
 });
 
 //sheet 84
 const employmentSchema = new Schema({
-    totalEmployed: { type: Number, required: true }, // ผู้มีงานทำทั้งหมด (รวม)
-    maleEmployed: { type: Number, required: true }, // ผู้มีงานทำทั้งหมด (ชาย)
-    femaleEmployed: { type: Number, required: true }, // ผู้มีงานทำทั้งหมด (หญิง)
-    totalElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (รวม)
-    maleElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (ชาย)
-    femaleElderlyEmployed: { type: Number, required: true }, // ผู้สูงอายุที่ทำงาน (หญิง)
-    elderlyToTotalEmploymentRatio: { type: Number, required: true }, // สัดส่วนแรงงานผู้สูงอายุต่อผู้มีงานทำทั้งหมด
+    totalEmployed: { type: Number }, // ผู้มีงานทำทั้งหมด (รวม)
+    maleEmployed: { type: Number }, // ผู้มีงานทำทั้งหมด (ชาย)
+    femaleEmployed: { type: Number }, // ผู้มีงานทำทั้งหมด (หญิง)
+    totalElderlyEmployed: { type: Number }, // ผู้สูงอายุที่ทำงาน (รวม)
+    maleElderlyEmployed: { type: Number }, // ผู้สูงอายุที่ทำงาน (ชาย)
+    femaleElderlyEmployed: { type: Number }, // ผู้สูงอายุที่ทำงาน (หญิง)
+    elderlyToTotalEmploymentRatio: { type: Number }, // สัดส่วนแรงงานผู้สูงอายุต่อผู้มีงานทำทั้งหมด
 });
 
 const ArticleSchema = new Schema({
     year: {type: Number, required: true},
-    article_33: { type: Number, required: true },
-    article_39: { type: Number, required: true },
-    article_40: { type: Number, required: true }
+    article_33: { type: Number },
+    article_39: { type: Number },
+    article_40: { type: Number }
   });
 
-const laborModel = new Schema({
+const laborDataSchema = new Schema({
     Labor : [LaborSchema],
     ForeignWorker : [ForeignWorkerSchema],
     HouseholdSaving : [HouseholdSavingSchema],
@@ -66,4 +66,4 @@ const laborModel = new Schema({
 
 })
 
-module.exports = mongoose.model('laborModel',laborModel)
+module.exports = { schema: laborDataSchema };

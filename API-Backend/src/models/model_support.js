@@ -5,9 +5,9 @@ const CommunityOrganisationCouncilSchema = new Schema({
     area: Number
 });
 const ChildSupportSchema = new Schema({
-    year: { type: Number, required: true },
-    children_supported: { type: Number, required: true },
-    families_supported: { type: Number, required: true }
+    year: { type: Number },
+    children_supported: { type: Number },
+    families_supported: { type: Number }
 });
 const CommunityFamilyDevelopmentCenterSchema = new Schema({
     CFDAmount: Number,
@@ -77,7 +77,7 @@ const SecureHomeProjectSchema = new Schema({
 });
 
 
-const supportModel = new Schema({
+const supportDataSchema = new Schema({
     CommunityOrganisationCouncil : [CommunityOrganisationCouncilSchema],
     ChildSupport : [ChildSupportSchema],
     CommunityFamilyDevelopmentCenter : [CommunityFamilyDevelopmentCenterSchema],
@@ -87,4 +87,5 @@ const supportModel = new Schema({
     Volunteer : [VolunteerSchema],
 })
 
-module.exports = supportModel;
+module.exports = { schema: supportDataSchema };
+

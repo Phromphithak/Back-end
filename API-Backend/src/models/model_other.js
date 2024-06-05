@@ -27,4 +27,4 @@ const other = new Schema({
   Performance : [PerformanceSchema]
 })
 
-module.exports = other;
+module.exports = { schema: other };

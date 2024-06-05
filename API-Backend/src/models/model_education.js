@@ -107,10 +107,10 @@ const EducationDepartmentSchema = new Schema({
     total_schools_all: Number
 });
 
-const educationModel = new Schema({
+const educationSchema = new Schema({
     Student : [StudentSchema],
     Kindergarten : [TypeofeducationalinstitutionSchema],
     EducationDepartment : [EducationDepartmentSchema]
 })
 
-module.exports = educationModel;
+module.exports =  { schema: educationSchema };

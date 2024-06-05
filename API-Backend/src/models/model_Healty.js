@@ -1,28 +1,8 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
-const screeningSchema = new Schema({
-    year: {
-        type: Number,
-        required: true
-    },
-    category: {
-        type: String,
-        enum: ['social', 'home', 'bed'],
-        required: true
-    },
-    numberOfElderlyScreened: {
-        type: Number,
-        required: true
-    },
-    percentage: {
-        type: Number,
-        required: true
-    }
-});
-
 const HealthDataSchema = new Schema({
-    year: { type: Number, required: true },
+    year: { type: Number },
     total_patients: {
         '2022': { type: Number },
         '2023': { type: Number }
@@ -37,54 +17,54 @@ const HealthDataSchema = new Schema({
 });
 
 const SuicideAttemptSchema = new Schema({
-    year: { type: Number, required: true },
+    year: { type: Number },
     attempts: {
-        '63': { type: Number, required: true },
-        '64': { type: Number, required: true },
-        '65': { type: Number, required: true },
-        '66': { type: Number, required: true }
+        '63': { type: Number },
+        '64': { type: Number },
+        '65': { type: Number },
+        '66': { type: Number }
     }
 });
 const SuicideSuccessSchema = new Schema({
-    count: { type: Number, required: true },
-    mid_year_population: { type: Number, required: true },
-    success_rate: { type: Number, required: true }
+    count: { type: Number },
+    mid_year_population: { type: Number },
+    success_rate: { type: Number }
 });
 const PatientSchema = new Schema({
-    year: { type: Number, required: true },
-    cumulativeCount: { type: Number, required: true },
-    newCount: { type: Number, required: true },
-    oldAndNewCount: { type: Number, required: true },
-    ratePerHundredThousand: { type: Number, required: true }
+    year: { type: Number },
+    cumulativeCount: { type: Number },
+    newCount: { type: Number },
+    oldAndNewCount: { type: Number },
+    ratePerHundredThousand: { type: Number }
 });
 const MedicalPersonSchema = new Schema({
-    year: { type: Number, required: true },
-    doc: { type: Number, required: true },
-    dent: { type: Number, required: true },
-    phar: { type: Number, required: true },
-    nurse: { type: Number, required: true }
+    year: { type: Number },
+    doc: { type: Number },
+    dent: { type: Number },
+    phar: { type: Number },
+    nurse: { type: Number }
 });
 
 const AobSchema = new Schema({
-    year: { type: Number, required: true },
-    aob: { type: Number, required: true }
+    year: { type: Number },
+    aob: { type: Number }
 });
 
 const AmountVolunteerSchema = new Schema({
-    year: { type: Number, required: true },
-    avt: { type: Number, required: true },
-    population_mid_year: { type: Number, required: true },
-    avt_per_people: { type: Number, required: true }
+    year: { type: Number },
+    avt: { type: Number },
+    population_mid_year: { type: Number },
+    avt_per_people: { type: Number }
   });
 
 const HospitalDataSchema = new Schema({
-    year: { type: Number, required: true },
+    year: { type: Number },
     types: {
-        hospital_community: { type: Number, required: true },
-        hospital_general: { type: Number, required: true },
-        hospital_center: { type: Number, required: true },
-        hospital_Subdistricthealthpromotion: { type: Number, required: true },
-        DistrictPublicHealthOffice: { type: Number, required: true }
+        hospital_community: { type: Number },
+        hospital_general: { type: Number },
+        hospital_center: { type: Number },
+        hospital_Subdistricthealthpromotion: { type: Number },
+        DistrictPublicHealthOffice: { type: Number }
     },
     medical_personnel: [MedicalPersonSchema],
     aob_data: [AobSchema],
@@ -92,8 +72,7 @@ const HospitalDataSchema = new Schema({
     patient_data: [PatientSchema],
     SuicideAttempt: [SuicideAttemptSchema],
     SuicideSuccess: [SuicideSuccessSchema],
-    HealthData: [HealthDataSchema],
-    screening : [screeningSchema]
+    HealthData: [HealthDataSchema]
 });
 
-module.exports = HospitalDataSchema;
+module.exports = {schema : HospitalDataSchema};
