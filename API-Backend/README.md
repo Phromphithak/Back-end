@@ -7,5 +7,9 @@ cd ./API-Backend
 npm install
 npm run start-service
 
-and u can run it require create .
+and u can run it require create .env in the folder connect to you database or mongoDB
+
+/// infile .env
+
+Data_URI = "mongodb+srv://<USERNAME>:<PASSWORD>@other from MongoDB"
 
